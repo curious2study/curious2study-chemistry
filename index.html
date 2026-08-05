@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry - Curious2Study</title>
+    <link rel="icon" type="image/png" href="https://curious2study.com/curious2study_small.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #333;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #f8fafc;
+            padding: 20px 0;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .header-logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #60a5fa;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        /* Sections */
+        .about-section {
+            padding: 40px 20px 0;
+        }
+
+        .chapter {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background-color: #f0f9ff;
+            padding: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .chapter-header h3 {
+            color: #1e3a8a;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .chapter-content {
+            padding: 20px;
+        }
+
+        .about-content p {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 14px;
+        }
+
+        .about-content h4 {
+            color: #1e3a8a;
+            font-size: 16px;
+            margin: 18px 0 8px;
+        }
+
+        .about-content ul {
+            margin: 0 0 14px 20px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .about-content li {
+            margin-bottom: 6px;
+        }
+
+        .about-note {
+            background-color: #eff6ff;
+            padding: 12px;
+            border-left: 4px solid #3b82f6;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #1e3a8a;
+            margin-top: 10px;
+        }
+
+        .resources {
+            padding: 20px 0 40px;
+        }
+
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-link {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #3b82f6;
+            border: 2px solid #e2e8f0;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .resource-link h3 {
+            color: #1e3a8a;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .resource-link p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .resource-link a {
+            display: inline-block;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .resource-link a:hover {
+            color: #1e3a8a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .resource-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="https://curious2study.com/curious2study_small.png" alt="Curious2Study Logo">
+                <div class="header-logo-text">
+                    <a href="https://curious2study.com" class="site-title">Curious2Study</a>
+                </div>
+            </div>
+            <a href="https://curious2study.com" class="back-link">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Chemistry 2e</h1>
+            <p>From atomic structure to nuclear chemistry. Video lectures are on the way.</p>
+            <span class="status-badge">🚧 Under Construction</span>
+        </div>
+    </section>
+
+    <!-- About This Page Section -->
+    <section class="container about-section">
+        <div class="chapter">
+            <div class="chapter-header">
+                <h3>What to Expect</h3>
+            </div>
+            <div class="chapter-content about-content">
+                <p>This page will host the chemistry video library for Curious2Study, built on the OpenStax Chemistry 2e textbook. Video lectures, study guides, and links to the source material are being put together now.</p>
+                <p>Once the first set of videos is ready, this page will list each chapter with links to its lectures on YouTube, along with a way to report any errors you find.</p>
+
+                <h4>Planned Content</h4>
+                <ul>
+                    <li>Video lectures covering all 21 chapters, from Essential Ideas through Nuclear Chemistry</li>
+                    <li>Study guides summarizing key terms and concepts for each chapter</li>
+                    <li>A link to the archived textbook PDF and the official OpenStax page</li>
+                    <li>A simple way to flag problems with a video or study guide</li>
+                </ul>
+
+                <div class="about-note">Check back soon, or watch the GitHub repository for updates.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="container resources">
+        <div class="resource-links">
+            <div class="resource-link">
+                <h3>OpenStax Textbook</h3>
+                <p>Free, peer-reviewed textbook from Rice University.</p>
+                <a href="https://openstax.org/details/books/chemistry-2e" target="_blank">Visit OpenStax →</a>
+            </div>
+
+            <div class="resource-link">
+                <h3>GitHub Repository</h3>
+                <p>Follow progress on this project as it develops.</p>
+                <a href="https://github.com/Curious2Study/curious2study-chemistry" target="_blank">View Repository →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Curious2Study - Learn How to Learn</p>
+            <p>Licensed under Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
+            <div class="footer-links">
+                <a href="https://curious2study.com">Home</a>
+                <a href="https://github.com/Curious2Study">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
