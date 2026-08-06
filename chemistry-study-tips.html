@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Study Chemistry - Curious2Study</title>
+    <link rel="icon" type="image/png" href="https://curious2study.com/curious2study_small.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #333;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #f8fafc;
+            padding: 20px 0;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .header-logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #60a5fa;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        /* Back to subject link, under hero */
+        .breadcrumb {
+            max-width: 900px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+        }
+
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .breadcrumb a:hover {
+            color: #1e3a8a;
+        }
+
+        /* Article body */
+        .article {
+            padding: 30px 20px 60px;
+        }
+
+        .article h2 {
+            color: #1e3a8a;
+            font-size: 24px;
+            margin: 32px 0 14px;
+        }
+
+        .article h2:first-child {
+            margin-top: 0;
+        }
+
+        .article p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .article strong {
+            color: #1e3a8a;
+        }
+
+        .section-intro {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .tips-list {
+            list-style: none;
+            counter-reset: tip-counter;
+        }
+
+        .tips-list > li {
+            counter-increment: tip-counter;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px 20px 18px 60px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .tips-list > li::before {
+            content: counter(tip-counter);
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            width: 28px;
+            height: 28px;
+            background-color: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .tips-list > li h3 {
+            color: #1e3a8a;
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .tips-list > li > p {
+            font-size: 15px;
+            margin-bottom: 0;
+            color: #333;
+        }
+
+        /* Study Tools cards (no numbering, unlike tips) */
+        .tools-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tool-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .tool-card h3 {
+            color: #1e3a8a;
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .tool-card p {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        .tool-card p + p {
+            margin-top: 10px;
+        }
+
+        .tool-link {
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .tool-link:hover {
+            color: #1e3a8a;
+        }
+
+        .prompt-box {
+            background-color: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 14px 0 0;
+        }
+
+        .prompt-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .prompt-box p.prompt-intro {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .prompt-steps {
+            margin: 0 0 0 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .prompt-steps li {
+            margin-bottom: 8px;
+        }
+
+        .source-note {
+            background-color: #eff6ff;
+            padding: 10px 14px;
+            border-left: 4px solid #3b82f6;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #1e3a8a;
+            margin-top: 12px;
+        }
+
+        .source-note a {
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .source-section {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-top: 10px;
+        }
+
+        .source-section h2 {
+            margin-top: 0;
+        }
+
+        .source-section p {
+            font-size: 15px;
+        }
+
+        .source-section a {
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .source-section a:hover {
+            color: #1e3a8a;
+        }
+
+        .back-to-top {
+            text-align: center;
+            padding: 20px 20px 0;
+        }
+
+        .back-to-top a {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-to-top a:hover {
+            background-color: #1e3a8a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .tips-list li {
+                padding: 16px 16px 16px 54px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="https://curious2study.com/curious2study_small.png" alt="Curious2Study Logo">
+                <div class="header-logo-text">
+                    <a href="https://curious2study.com" class="site-title">Curious2Study</a>
+                </div>
+            </div>
+            <a href="https://curious2study.com" class="back-link">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>How to Study Chemistry</h1>
+            <p>Practical habits for connecting the math to the chemistry behind it.</p>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="index.html">← Back to Chemistry</a>
+    </div>
+
+    <!-- Article -->
+    <section class="container article">
+        <h2>How Do You Study Chemistry?</h2>
+        <p>Chemistry sits in an odd spot between physics and biology. Like physics, it involves solving problems using a defined, repeatable method. Like biology, it has a large foundational vocabulary you need to actually remember. And unlike either one, it asks you to reason about things you can never see directly, atoms and bonds, by learning to represent them in ways you can actually visualize and manipulate. Struggling with chemistry at first is normal, even strong students wrestle with it before it clicks, the same way learning an instrument or a new language takes real time before it feels natural.</p>
+        <div class="source-note">Source: Stanford Department of Chemistry, <a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">"Study Tips for Chemistry" →</a></div>
+
+        <h2>Study Tips</h2>
+        <ol class="tips-list">
+            <li>
+                <h3>Ask "why," not just "how"</h3>
+                <p>When you work through a problem, whether it's one you're given or one you solved yourself, you should be able to explain why each step happens: why that piece of information matters, why you chose that formula, why a particular assumption is valid, why you needed that conversion. Reading a solution and thinking "that makes sense" is not the same as being able to justify it yourself. If you can't explain a step beyond "that's just what you do," you won't be able to apply it to a problem that looks even slightly different.</p>
+                <div class="source-note">Sources: Stanford Department of Chemistry, <a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">"Study Tips for Chemistry"</a>; YouTube, <a href="https://www.youtube.com/watch?v=zckxf6dc6Bs" target="_blank">"How to Actually Get Better at Chemistry"</a></div>
+            </li>
+            <li>
+                <h3>Use a staged method when solving problems</h3>
+                <p>First figure out exactly what's being asked. Then list out your data, your units, and any assumptions you're making, before you calculate anything. Then apply the method, tracking your units at every step so a conversion error shows up immediately instead of hiding in the final number. Only check your final answer once you've actually finished, checking midway tends to make you stop reasoning through the rest of the problem yourself.</p>
+                <div class="source-note">Source: YouTube, <a href="https://www.youtube.com/watch?v=zckxf6dc6Bs" target="_blank">"How to Actually Get Better at Chemistry" →</a></div>
+            </li>
+            <li>
+                <h3>Learn to see molecules in more than one representation, and in 3D when it matters</h3>
+                <p>Chemistry deals with things you can't see directly, so translating between representations, molecular formula, structural formula, skeletal formula, and a 3D model, is how you actually build intuition for what's happening. This matters most in organic chemistry, where the three-dimensional shape of a molecule directly affects how it reacts. Use a 3D visualization tool or a physical model kit whenever you're working through organic structures, not just when a problem specifically asks for one.</p>
+                <div class="source-note">Sources: YouTube, <a href="https://www.youtube.com/watch?v=zckxf6dc6Bs" target="_blank">"How to Actually Get Better at Chemistry"</a>; Stanford Department of Chemistry, <a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">"Study Tips for Chemistry"</a></div>
+            </li>
+            <li>
+                <h3>Build the periodic table as a pattern, not a memorized list</h3>
+                <p>Learn one group at a time, and understand why elements in that group behave similarly, rather than trying to memorize the whole chart at once. Once you see it as a logical map instead of a list of symbols, you'll find yourself predicting behavior instead of looking it up.</p>
+                <div class="source-note">Source: YouTube, <a href="https://www.youtube.com/watch?v=zckxf6dc6Bs" target="_blank">"How to Actually Get Better at Chemistry" →</a></div>
+            </li>
+            <li>
+                <h3>Take your lab sections seriously, and keep an actual lab notebook</h3>
+                <p>This video library covers the lecture-level material, not the lab itself, but the lab is where chemistry stops being abstract. Recording what you did and what you observed, in detail, lets you compare results over time and actually reason through what happened rather than just filing away a grade. The habits of forming a hypothesis, testing it, and interpreting the result carry over directly into how you approach lecture problems too.</p>
+                <div class="source-note">Sources: YouTube, <a href="https://www.youtube.com/watch?v=zckxf6dc6Bs" target="_blank">"How to Actually Get Better at Chemistry"</a>; Stanford Department of Chemistry, <a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">"Study Tips for Chemistry"</a></div>
+            </li>
+            <li>
+                <h3>When you get a problem or exam back wrong, redo it yourself before looking at the solution again</h3>
+                <p>See how far you actually get. Then ask: did you get stuck on the concept itself, the math, or did you just misread the question? Those are three different problems with three different fixes, and lumping them together as "I got it wrong" means you'll keep making the same kind of mistake without noticing the pattern.</p>
+                <div class="source-note">Source: Stanford Department of Chemistry, <a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">"Study Tips for Chemistry" →</a></div>
+            </li>
+            <li>
+                <h3>Read the material before lecture, not just after</h3>
+                <p>Getting a first pass at the concepts on your own, even an imperfect one, means lecture time reinforces something you've already half-learned instead of being your first exposure to it.</p>
+                <div class="source-note">Source: Stanford Department of Chemistry, <a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">"Study Tips for Chemistry" →</a></div>
+            </li>
+            <li>
+                <h3>Study in focused sessions with real breaks, at a time when you're actually alert</h3>
+                <p>Studying chemistry for hours straight tends to backfire, you get confused and start forgetting what you just learned. Shorter, focused sessions with a real break in between hold your attention better and help the material stick. Just as importantly, don't save chemistry for the end of the day when you're already worn out, pick a time when you're genuinely awake and able to think, even if it's a short block.</p>
+                <div class="source-note">Sources: YouTube, <a href="https://www.youtube.com/watch?v=zckxf6dc6Bs" target="_blank">"How to Actually Get Better at Chemistry"</a>; Stanford Department of Chemistry, <a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">"Study Tips for Chemistry"</a></div>
+            </li>
+        </ol>
+
+        <h2>Study Tools</h2>
+        <p class="section-intro">These tools map onto the habits above, each is suited to a different part of the routine, not a replacement for actually working through practice problems yourself.</p>
+        <div class="tools-list">
+            <div class="tool-card">
+                <h3>Quizlet</h3>
+                <p><a class="tool-link" href="https://quizlet.com" target="_blank">quizlet.com →</a></p>
+                <p>Well suited to the foundational vocabulary chemistry is built on: reaction types, functional groups, unit conversions, and so on. Build a themed flashcard set for each major topic area, and use it to find out quickly which terms you actually know versus which ones you only recognize. Search Quizlet's public library first, there's a good chance a set already exists for your textbook or course.</p>
+            </div>
+
+            <div class="tool-card">
+                <h3>MolView</h3>
+                <p><a class="tool-link" href="https://molview.org" target="_blank">molview.org →</a></p>
+                <p>A free browser tool for drawing a chemical formula and viewing the resulting molecule as an actual 3D structure you can rotate and zoom. This is the practical tool behind the representations tip above, and it matters most for organic chemistry, where a molecule's 3D shape directly affects how it reacts.</p>
+            </div>
+
+            <div class="tool-card">
+                <h3>NotebookLM</h3>
+                <p>NotebookLM can turn your own notes, textbook chapters, or lecture slides into quizzes, flashcards, infographics, mind maps, and more. Give it a clear scope, a specific chapter, page range, or lecture slide set, rather than your whole notebook at once, so it draws from the unit you're actually studying that day.</p>
+            </div>
+
+            <div class="tool-card">
+                <h3>AI Chat (Claude, ChatGPT, Gemini)</h3>
+                <p>Good for walking through a problem using the staged method above, and for getting a "why" explanation instead of just an answer. One honest limitation: AI chat can describe a molecule's 3D shape in words, but it can't generate a chemically accurate 3D structure the way MolView can, so use MolView for the actual visualization and AI chat for working through the problem itself.</p>
+                <div class="prompt-box">
+                    <div class="prompt-label">Example Prompt</div>
+                    <p class="prompt-intro">You are my chemistry tutor. I'm attaching a photo of a problem I'm working on. Please don't give me the final answer or a full worked solution right away. Instead, walk me through it like a tutor would, one stage at a time:</p>
+                    <ol class="prompt-steps">
+                        <li>Restate the problem in your own words, and tell me exactly what quantity or result it's actually asking for.</li>
+                        <li>Then stop. Give me a moment to think about which method, formula, or reaction applies before you tell me. Wait for me to say "next."</li>
+                        <li>When I say next, tell me which method applies, and briefly explain why, not just what it is.</li>
+                        <li>When I say next again, list out the data, units, and any assumptions needed to solve it, before doing any calculation.</li>
+                        <li>When I say next, walk through the solution one step at a time, tracking units at every step. After each step, stop. If I ask a question about that step, answer it and wait for me to say "next" before continuing. If I just say "next," move on to the following step.</li>
+                        <li>If I tell you I got something wrong, or show you my own attempt, tell me whether the mistake was in the chemistry concept, the math or unit conversion, or a misreading of the question, and briefly explain why.</li>
+                        <li>Only give me the complete worked solution if I explicitly ask for it.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="source-section">
+            <h2>Source</h2>
+            <p>Several tips on this page are adapted from two sources: the Stanford Department of Chemistry's <strong>"Study Tips for Chemistry"</strong> (<a href="https://chemistry.stanford.edu/outreach/chemical-education/student-success/study-tips-chemistry" target="_blank">read it here →</a>) and the YouTube video <strong>"How to Actually Get Better at Chemistry"</strong> (<a href="https://www.youtube.com/watch?v=zckxf6dc6Bs" target="_blank">watch it here →</a>).</p>
+        </div>
+
+        <div class="back-to-top">
+            <a href="index.html">← Back to Chemistry</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Curious2Study - Learn How to Learn</p>
+            <p>Licensed under Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
+            <div class="footer-links">
+                <a href="https://curious2study.com">Home</a>
+                <a href="https://github.com/Curious2Study">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
